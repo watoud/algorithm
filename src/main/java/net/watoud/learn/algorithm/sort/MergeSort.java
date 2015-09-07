@@ -1,7 +1,7 @@
 /**
  * 
  */
-package net.watoud.learn.algorithm.sort.merge;
+package net.watoud.learn.algorithm.sort;
 
 /**
  * @author lixudong
