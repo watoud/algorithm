@@ -2,7 +2,7 @@
  * AddTwoNumbersTest.java
  * 2015Äê9ÔÂ8ÈÕ
  */
-package net.watoud.learn.algorithm.sort;
+package net.watoud.learn.algorithm.leetcode;
 
 import net.watoud.learn.algorithm.leetcode.AddTwoNumbers;
 import net.watoud.learn.algorithm.leetcode.AddTwoNumbers.ListNode;
