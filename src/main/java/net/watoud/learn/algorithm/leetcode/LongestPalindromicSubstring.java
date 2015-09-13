@@ -10,6 +10,10 @@ package net.watoud.learn.algorithm.leetcode;
  *         Given a string S, find the longest palindromic substring in S. You
  *         may assume that the maximum length of S is 1000, and there exists one
  *         unique longest palindromic substring.
+ * 
+ *         c12321ab可以看成是，从前后分别同时去掉一个字符，一直到前面或者后面到达12321的边界字符。
+ *         c12321ab->12321a
+ *         而且，计算回文的时候，从最长的字符串开始，可以节省不少操作
  */
 public class LongestPalindromicSubstring
 {

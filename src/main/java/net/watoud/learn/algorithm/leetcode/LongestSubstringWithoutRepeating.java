@@ -12,6 +12,9 @@ package net.watoud.learn.algorithm.leetcode;
  *         repeating letters for "abcabcbb" is "abc", which the length is 3. For
  *         "bbbbb" the longest substring is "b", with the length of 1.
  * 
+ *         比较的时候，前面的比较结果可以为后面的比较所使用
+ *         比如，1abcdbew，当发现b重复之后，可以从c开始再与b进行比较，
+ * 
  */
 public class LongestSubstringWithoutRepeating
 {
