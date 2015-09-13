@@ -19,38 +19,73 @@ public class LongestPalindromicSubstring
 		{
 			return null;
 		}
+		int maxLength = 0;
+		int maxIndex1 = 0, maxIndex2 = 0, maxBase1 = 0, maxBase2 = 0;
 
-		int begin = 0, end = 0, length = 0;
 		for (int i = s.length() - 1; i >= 0; i--)
 		{
-			for (int j = 0; j <= i / 2; j++)
+			int begin = 0, end = i;
+			int index1 = begin, index2 = end;
+			while (begin <= end)
 			{
-				if (isPalindromic(s, j, i))
+				if (s.charAt(begin) != s.charAt(end))
 				{
-					if (i - j + 1 > length)
-					{
-						length = i - j + 1;
-						begin = j;
-						end = i;
-					}
-					break;
+					index1 = begin + 1;
+					index2 = end - 1;
 				}
+				end--;
+				begin++;
 			}
-		}
-		return s.substring(begin, end + 1);
-	}
 
-	public boolean isPalindromic(String s, int begin, int end)
-	{
-		while (begin <= end)
-		{
-			if (s.charAt(begin) != s.charAt(end))
+			if (maxLength < index2 - index1 + 1)
 			{
-				return false;
+				maxLength = index2 - index1 + 1;
+				maxIndex1 = index1;
+				maxIndex2 = index2;
 			}
-			begin++;
-			end--;
+
+			if (index1 == 0)
+			{
+				break;
+			}
 		}
-		return true;
+
+		for (int i = 0; i < s.length(); i++)
+		{
+			int begin = i, end = s.length() - 1;
+			int base1 = begin, base2 = end;
+			while (begin <= end)
+			{
+				if (s.charAt(begin) != s.charAt(end))
+				{
+					base1 = begin + 1;
+					base2 = end - 1;
+				}
+				end--;
+				begin++;
+			}
+
+			if (maxLength < base2 - base1 + 1)
+			{
+				maxLength = base2 - base1 + 1;
+				maxBase1 = base1;
+				maxBase2 = base2;
+			}
+
+			if (base2 == s.length() - 1)
+			{
+				break;
+			}
+		}
+
+		if (maxBase2 - maxBase1 > maxIndex2 - maxIndex1)
+		{
+
+			return s.substring(maxBase1, maxBase2 + 1);
+		}
+		else
+		{
+			return s.substring(maxIndex1, maxIndex2 + 1);
+		}
 	}
 }
