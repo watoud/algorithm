@@ -33,8 +33,8 @@ public class PalindromeNumberTest
 	{
 		PalindromeNumber solutiuon = new PalindromeNumber();
 
-		Assert.assertTrue(solutiuon.isPalindrome2(1410110141));
 		Assert.assertFalse(solutiuon.isPalindrome2(1000021));
+		Assert.assertTrue(solutiuon.isPalindrome2(1410110141));
 		Assert.assertFalse(solutiuon.isPalindrome2(10));
 		Assert.assertFalse(solutiuon.isPalindrome2(1000021));
 		Assert.assertFalse(solutiuon.isPalindrome2(23));

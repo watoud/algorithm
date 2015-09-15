@@ -38,31 +38,25 @@ public class PalindromeNumber
 	public boolean isPalindrome2(int x)
 	{
 		if (x < 0)
-		{
 			return false;
+
+		// initialize how many zeros
+		int div = 1;
+		while (x / div >= 10)
+		{
+			div *= 10;
 		}
 
-		int count = 1;
-		int base = 10;
-		while (x / base >= 1)
+		while (x != 0)
 		{
-			base = base * 10;
-			count++;
-			if (count >= 10)
-			{
-				break;
-			}
-		}
+			int left = x / div;
+			int right = x % 10;
 
-		int begin = 1, end = count;
-		while (begin <= count)
-		{
-			if (targetBitValue(x, begin) != targetBitValue(x, end))
-			{
+			if (left != right)
 				return false;
-			}
-			begin++;
-			end--;
+
+			x = (x % div) / 10;
+			div /= 100;
 		}
 
 		return true;
