@@ -76,8 +76,9 @@ public class MedianofTwoSortedArrays
 		if (k == 0)
 			return A[aStart] < B[bStart] ? A[aStart] : B[bStart];
 
-		int aMid = aLen * k / (aLen + bLen); // a's middle count
-		int bMid = k - aMid - 1; // b's middle count
+		// int aMid = aLen * k / (aLen + bLen); // a's middle count
+		int aMid = Math.min(k / 2, aLen - 1);
+		int bMid = Math.min(k - aMid - 1, bLen - 1); // b's middle count
 
 		// make aMid and bMid to be array index
 		aMid = aMid + aStart;
