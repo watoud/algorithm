@@ -37,6 +37,7 @@ public class GenerateParentheses2
 	{
 
 		int sum = 0;
+		int count = arr.length + 1;
 		for (int i = 0; i < level; i++)
 		{
 			if (arr[i] == '(')
@@ -46,8 +47,9 @@ public class GenerateParentheses2
 			else
 			{
 				sum -= 1;
+				count -= 2;
 			}
-			if (sum < 0)
+			if (sum < 0 || sum > count / 2)
 			{
 				return;
 			}
@@ -62,23 +64,23 @@ public class GenerateParentheses2
 		}
 		else
 		{
-			sum = 0;
-			for (int i = 0; i < level; i++)
-			{
-				if (arr[i] == '(')
-				{
-					sum += 1;
-				}
-				else
-				{
-					sum -= 1;
-				}
-			}
-
-			if (sum != 0)
-			{
-				return;
-			}
+			// sum = 0;
+			// for (int i = 0; i < level; i++)
+			// {
+			// if (arr[i] == '(')
+			// {
+			// sum += 1;
+			// }
+			// else
+			// {
+			// sum -= 1;
+			// }
+			// }
+			//
+			// if (sum != 0)
+			// {
+			// return;
+			// }
 
 			StringBuilder builder = new StringBuilder();
 			for (int i = 0; i < arr.length; i++)
