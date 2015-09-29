@@ -29,10 +29,9 @@ public class JumpGamePerf
 		}
 
 		int gap = 1;
-		int index = nums.length - 2;
-		while (index >= 0)
+		for (int i = nums.length - 2; i >= 0; i--)
 		{
-			if (nums[index] >= gap)
+			if (nums[i] >= gap)
 			{
 				gap = 1;
 			}
@@ -40,7 +39,6 @@ public class JumpGamePerf
 			{
 				gap++;
 			}
-			index--;
 		}
 
 		if (gap != 1)
