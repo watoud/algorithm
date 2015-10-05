@@ -26,34 +26,27 @@ public class LongestSubstringWithoutRepeating
 			return 0;
 		}
 
-		int maxLength = 1;
-		int base1 = 0, base2 = 1;
-		while (base1 < s.length() && base2 < s.length())
+		int base1 = 0, base2 = 1, maxLength = 1;
+
+		lable: while (base1 < s.length() && base2 < s.length())
 		{
 			int i = base1;
 			for (; i < s.length() && i < base2; i++)
 			{
 				if (s.charAt(i) == s.charAt(base2))
 				{
+					maxLength = Math.max(maxLength, base2 - base1);
 					base1 = i + 1;
 					if (base2 <= base1)
 					{
 						base2++;
 					}
-					break;
+					continue lable;
 				}
 			}
-			if (i == base2)
-			{
-				if (base2 - base1 + 1 > maxLength)
-				{
-					maxLength = base2 - base1 + 1;
-				}
-
-				base2++;
-			}
-
+			base2++;
 		}
-		return maxLength;
+
+		return Math.max(maxLength, base2 - base1);
 	}
 }

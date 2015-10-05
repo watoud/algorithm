@@ -18,6 +18,7 @@ public class LongestSubstringWithoutRepeatingTest
 	public void testLengthOfLongestSubstring()
 	{
 		LongestSubstringWithoutRepeating solution = new LongestSubstringWithoutRepeating();
+		Assert.assertEquals(4, solution.lengthOfLongestSubstring("aaabdcc"));
 		Assert.assertEquals(4, solution.lengthOfLongestSubstring("abcec"));
 		Assert.assertEquals(5, solution.lengthOfLongestSubstring("abceC"));
 		Assert.assertEquals(1, solution.lengthOfLongestSubstring("aaaaa"));
@@ -27,7 +28,7 @@ public class LongestSubstringWithoutRepeatingTest
 
 		Assert.assertEquals(0, solution.lengthOfLongestSubstring(""));
 		Assert.assertEquals(0, solution.lengthOfLongestSubstring(null));
-		Assert.assertEquals(4, solution.lengthOfLongestSubstring("aaabdcc"));
+
 		Assert.assertEquals(4, solution.lengthOfLongestSubstring("1234"));
 		Assert.assertEquals(6, solution.lengthOfLongestSubstring("12344456789990"));
 	}
