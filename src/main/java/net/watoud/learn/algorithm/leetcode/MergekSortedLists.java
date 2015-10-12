@@ -47,8 +47,6 @@ public class MergekSortedLists
 		ListNode cur = head;
 
 		// 把链表按照第一个节点的值排序
-		// sort(input);
-
 		Arrays.sort(input, new ListNodeComparator());
 
 		int index = 0;
@@ -57,10 +55,6 @@ public class MergekSortedLists
 			if (index + 1 >= input.length)
 			{
 				cur.next = input[index];
-				while (cur.next != null)
-				{
-					cur = cur.next;
-				}
 				break;
 			}
 
@@ -91,31 +85,6 @@ public class MergekSortedLists
 		return head.next;
 	}
 
-	// /**
-	// * @param lists
-	// */
-	// private void sort(ListNode[] lists)
-	// {
-	// for (int i = 0; i < lists.length; i++)
-	// {
-	// int cur = i;
-	// for (int j = i + 1; j < lists.length; j++)
-	// {
-	// if (lists[cur].val > lists[j].val)
-	// {
-	// cur = j;
-	// }
-	// }
-	//
-	// if (lists[cur] != lists[i])
-	// {
-	// ListNode tmp = lists[i];
-	// lists[i] = lists[cur];
-	// lists[cur] = tmp;
-	// }
-	// }
-	// }
-
 	public static class ListNodeComparator implements Comparator<ListNode>
 	{
 		@Override
@@ -134,6 +103,5 @@ public class MergekSortedLists
 				return 1;
 			}
 		}
-
 	}
 }
