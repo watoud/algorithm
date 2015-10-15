@@ -1,5 +1,5 @@
 /**
- * Permutations.java
+ * PermutationsII.java
  * 2015Äê10ÔÂ13ÈÕ
  */
 package net.watoud.learn.algorithm.leetcode;
@@ -11,9 +11,9 @@ import java.util.List;
  * @author lixudong
  *
  */
-public class Permutations
+public class PermutationsII
 {
-	public List<List<Integer>> permute(int[] nums)
+	public List<List<Integer>> permuteUnique(int[] nums)
 	{
 		if (nums == null || nums.length == 0)
 		{
@@ -40,6 +40,10 @@ public class Permutations
 		doPermute(nums, level + 1, result);
 		for (int i = level + 1; i < nums.length; i++)
 		{
+			if (nums[i] == nums[level])
+			{
+				continue;
+			}
 			swap(nums, level, i);
 			doPermute(nums, level + 1, result);
 			swap(nums, level, i);
