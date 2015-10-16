@@ -6,7 +6,9 @@ package net.watoud.learn.algorithm.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author lixudong
@@ -40,14 +42,22 @@ public class PermutationsII
 			int size = result.size();
 			for (int i = 0; i < size; i++)
 			{
+				Map<Integer, Integer> mapper = new HashMap<>();
+				mapper.put(result.get(i).get(pos), 1);
 				for (int j = pos + 1; j < nums.length; j++)
 				{
 					List<Integer> cur = new ArrayList<>(result.get(i));
-					if (cur.get(pos) != cur.get(j))
+					if (mapper.get(cur.get(j)) != null)
 					{
-						swap(cur, pos, j);
-						result.add(cur);
+						continue;
 					}
+					else
+					{
+						mapper.put(cur.get(j), 1);
+					}
+
+					swap(cur, pos, j);
+					result.add(cur);
 				}
 			}
 			pos++;

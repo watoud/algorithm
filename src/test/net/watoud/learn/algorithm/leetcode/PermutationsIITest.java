@@ -21,7 +21,11 @@ public class PermutationsIITest
 		PermutationsII sol = new PermutationsII();
 		List<List<Integer>> result = null;
 
-		result = sol.permuteUnique(new int[] { 1, 2, 3, 4 });
+		result = sol.permuteUnique(new int[] { 1, 2, 1 });
+		System.out.println(result);
+		Assert.assertEquals(3, result.size());
+
+		result = sol.permuteUnique(new int[] { 1, 2, 3 });
 		System.out.println(result.size());
 		System.out.println(result);
 
@@ -32,10 +36,6 @@ public class PermutationsIITest
 		result = sol.permuteUnique(new int[] { 1, 2, 2, 3 });
 		System.out.println(result.size());
 		System.out.println(result);
-
-		result = sol.permuteUnique(new int[] { 1, 1, 2 });
-		System.out.println(result);
-		Assert.assertEquals(3, result.size());
 
 		result = sol.permuteUnique(new int[] { 1, 1 });
 		System.out.println(result);
