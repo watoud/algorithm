@@ -21,6 +21,10 @@ public class PermutationsIITest
 		PermutationsII sol = new PermutationsII();
 		List<List<Integer>> result = null;
 
+		result = sol.permuteUnique(new int[] { 1, 2, 3, 4 });
+		System.out.println(result.size());
+		System.out.println(result);
+
 		result = sol.permuteUnique(new int[] { 3, 3, 0, 0, 2, 3, 2 });
 		System.out.println(result.size());
 		System.out.println(result);

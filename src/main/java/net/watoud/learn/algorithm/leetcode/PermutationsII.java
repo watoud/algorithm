@@ -5,6 +5,7 @@
 package net.watoud.learn.algorithm.leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -19,41 +20,46 @@ public class PermutationsII
 		{
 			return new ArrayList<>();
 		}
+
+		List<Integer> first = new ArrayList<>();
+		for (int i = 0; i < nums.length; i++)
+		{
+			first.add(Integer.valueOf(nums[i]));
+		}
+
+		if (nums.length < 2)
+		{
+			return Arrays.asList(first);
+		}
+
 		List<List<Integer>> result = new ArrayList<>();
-		doPermute(nums, 0, result);
+		result.add(first);
+		int pos = 0;
+		while (pos < nums.length - 1)
+		{
+			int size = result.size();
+			for (int i = 0; i < size; i++)
+			{
+				for (int j = pos + 1; j < nums.length; j++)
+				{
+					List<Integer> cur = new ArrayList<>(result.get(i));
+					if (cur.get(pos) != cur.get(j))
+					{
+						swap(cur, pos, j);
+						result.add(cur);
+					}
+				}
+			}
+			pos++;
+		}
+
 		return result;
 	}
 
-	private void doPermute(int[] nums, int level, List<List<Integer>> result)
+	public void swap(List<Integer> list, int a, int b)
 	{
-		if (level == nums.length - 1)
-		{
-			List<Integer> tmp = new ArrayList<>();
-			for (int i = 0; i < nums.length; i++)
-			{
-				tmp.add(nums[i]);
-			}
-			result.add(tmp);
-			return;
-		}
-
-		doPermute(nums, level + 1, result);
-		for (int i = level + 1; i < nums.length; i++)
-		{
-			if (nums[i] == nums[level])
-			{
-				continue;
-			}
-			swap(nums, level, i);
-			doPermute(nums, level + 1, result);
-			swap(nums, level, i);
-		}
-	}
-
-	public void swap(int[] arr, int a, int b)
-	{
-		int tmp = arr[a];
-		arr[a] = arr[b];
-		arr[b] = tmp;
+		int tmp = list.get(a);
+		list.set(a, list.get(b));
+		list.set(b, tmp);
 	}
 }
