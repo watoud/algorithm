@@ -17,6 +17,6 @@ public class CombinationSumIITest
 	{
 		CombinationSumII sol = new CombinationSumII();
 
-		ListUtils.print(sol.combinationSum2(new int[] { 10, 1, 1, 2, 7, 6, 2, 1, 5 }, 8));
+		ListUtils.print(sol.combinationSum2(new int[] { 10, 1, 2, 7, 6, 1, 5 }, 8));
 	}
 }

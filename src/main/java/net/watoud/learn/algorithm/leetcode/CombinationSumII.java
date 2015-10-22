@@ -42,15 +42,30 @@ public class CombinationSumII
 			return;
 		}
 
-		for (int i = start; i < candidates.length; i++)
+		int index = start;
+		while (index < candidates.length)
 		{
-			if (i > 0 && candidates[i] == candidates[i - 1])
+			int tmp = index + 1;
+			while (tmp < candidates.length && candidates[tmp] == candidates[tmp - 1])
 			{
-				continue;
+				tmp++;
 			}
-			elements.add(candidates[i]);
-			combinate(candidates, i + 1, target - candidates[i], elements, result);
-			elements.remove(elements.size() - 1);
+
+			int count = tmp - index, sum = 0;
+
+			for (int c = 0; c < count; c++)
+			{
+				elements.add(candidates[index + c]);
+				sum += candidates[index + c];
+				combinate(candidates, tmp, target - sum, elements, result);
+			}
+
+			for (int i = 0; i < count; i++)
+			{
+				elements.remove(elements.size() - 1);
+			}
+
+			index = tmp;
 		}
 	}
 }
