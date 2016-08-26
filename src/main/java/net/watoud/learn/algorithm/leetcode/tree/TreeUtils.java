@@ -1,7 +1,39 @@
 package net.watoud.learn.algorithm.leetcode.tree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TreeUtils
 {
+	public static int[] inorder(TreeNode root)
+	{
+		if (root == null)
+		{
+			return new int[0];
+		}
+		List<Integer> res = new ArrayList<>();
+		inorderAux(root, res);
+		int[] dat = new int[res.size()];
+		for (int i = 0; i < res.size(); i++)
+		{
+			dat[i] = res.get(i);
+		}
+		return dat;
+	}
+
+	private static void inorderAux(TreeNode root, List<Integer> res)
+	{
+		if (root.left != null)
+		{
+			inorderAux(root.left, res);
+		}
+		res.add(root.val);
+		if (root.right != null)
+		{
+			inorderAux(root.right, res);
+		}
+	}
+
 	public static TreeNode createTreeFromArray(String[] dat)
 	{
 		if (dat == null || dat.length == 0)
