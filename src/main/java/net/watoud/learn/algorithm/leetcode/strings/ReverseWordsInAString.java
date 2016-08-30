@@ -12,7 +12,6 @@ public class ReverseWordsInAString
 
 		char[] arr = s.toCharArray();
 
-		//
 		int count = 0, index = 0, len = arr.length;
 		while (index < len)
 		{
