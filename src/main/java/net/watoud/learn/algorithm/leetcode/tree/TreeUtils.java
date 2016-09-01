@@ -5,6 +5,45 @@ import java.util.List;
 
 public class TreeUtils
 {
+	public static TreeLinkNode createTreeLinkNodesFromArray(String[] dat)
+	{
+		if (dat == null || dat.length == 0)
+		{
+			return null;
+		}
+
+		TreeLinkNode[] result = new TreeLinkNode[dat.length];
+		for (int i = 0; i < result.length; i++)
+		{
+			if (dat[i].equals("X"))
+			{
+				result[i] = null;
+			}
+			else
+			{
+				result[i] = new TreeLinkNode(Integer.valueOf(dat[i]));
+			}
+		}
+
+		for (int i = 0; i < result.length; i++)
+		{
+			if (result[i] != null)
+			{
+				if ((i + 1) * 2 - 1 < result.length)
+				{
+					result[i].left = result[(i + 1) * 2 - 1];
+				}
+
+				if ((i + 1) * 2 < result.length)
+				{
+					result[i].right = result[(i + 1) * 2];
+				}
+			}
+		}
+
+		return result[0];
+	}
+
 	public static int[] inorder(TreeNode root)
 	{
 		if (root == null)
