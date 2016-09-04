@@ -12,6 +12,26 @@ import java.util.List;
  */
 public class ListUtils
 {
+	public static int[] toArray(ListNode head, int n)
+	{
+		if (head == null || n <= 0)
+		{
+			return new int[0];
+		}
+
+		int[] r = new int[n];
+		ListNode cur = head;
+
+		int i = 0;
+		while (cur != null)
+		{
+			r[i] = cur.val;
+			cur = cur.next;
+			i++;
+		}
+		return r;
+	}
+
 	public static <T> void print(List<List<T>> values)
 	{
 		for (List<T> v : values)
