@@ -12,23 +12,23 @@ public class EvaluateReversePolishNotation
 		}
 
 		Stack<Integer> st = new Stack<>();
-		for (int i = 0; i < tokens.length; i++)
+		for (String s : tokens)
 		{
-			if (tokens[i] == "+")
+			if (s.equals("+"))
 			{
 				st.push(st.pop() + st.pop());
 			}
-			else if (tokens[i] == "-")
+			else if (s.equals("-"))
 			{
 				int a = st.pop();
 				int b = st.pop();
 				st.push(b - a);
 			}
-			else if (tokens[i] == "*")
+			else if (s.equals("*"))
 			{
 				st.push(st.pop() * st.pop());
 			}
-			else if (tokens[i] == "/")
+			else if (s.equals("/"))
 			{
 				int a = Integer.valueOf(st.pop());
 				int b = Integer.valueOf(st.pop());
@@ -36,7 +36,7 @@ public class EvaluateReversePolishNotation
 			}
 			else
 			{
-				st.push(Integer.valueOf(tokens[i]));
+				st.push(Integer.valueOf(s));
 			}
 		}
 		return st.pop();
