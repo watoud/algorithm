@@ -3,9 +3,6 @@ package net.watoud.learn.algorithm.leetcode.lists;
 import org.junit.Assert;
 import org.junit.Test;
 
-import net.watoud.learn.algorithm.leetcode.ListNode;
-import net.watoud.learn.algorithm.leetcode.ListUtils;
-
 public class ReorderListTest
 {
 	@Test

@@ -3,7 +3,7 @@ package net.watoud.learn.algorithm.leetcode.tree;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.watoud.learn.algorithm.leetcode.ListNode;
+import net.watoud.learn.algorithm.leetcode.lists.ListNode;
 
 public class ConvertSortedList2BinarySearchTree
 {

@@ -1,7 +1,5 @@
 package net.watoud.learn.algorithm.leetcode.lists;
 
-import net.watoud.learn.algorithm.leetcode.ListNode;
-
 public class ReorderList
 {
 	public void reorderList(ListNode head)

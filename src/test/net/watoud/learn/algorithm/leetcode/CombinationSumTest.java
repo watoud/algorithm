@@ -8,6 +8,8 @@ import java.util.List;
 
 import org.junit.Test;
 
+import net.watoud.learn.algorithm.leetcode.lists.ListUtils;
+
 /**
  * @author lixudong
  *

@@ -4,6 +4,9 @@
  */
 package net.watoud.learn.algorithm.leetcode;
 
+import net.watoud.learn.algorithm.leetcode.lists.ListNode;
+import net.watoud.learn.algorithm.leetcode.lists.ListNodeUtils;
+
 /**
  * @author lixudong
  *

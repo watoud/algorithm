@@ -6,6 +6,8 @@ package net.watoud.learn.algorithm.leetcode;
 
 import org.junit.Test;
 
+import net.watoud.learn.algorithm.leetcode.lists.ListUtils;
+
 /**
  * @author lixudong
  *
